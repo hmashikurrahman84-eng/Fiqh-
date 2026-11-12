@@ -182,9 +182,12 @@ export const PhotoCardCanvas: React.FC<PhotoCardCanvasProps> = ({
     >
       {/* Outer Card with Neon Lighting Glow Effect */}
       <div className="relative rounded-2xl p-2 bg-[#0F1C3F] border-2 border-sky-400 ring-4 ring-sky-500/30 shadow-[0_0_40px_rgba(56,189,248,0.6),0_0_80px_rgba(14,165,233,0.35)] max-w-full overflow-hidden transition-all duration-300">
-        {/* Decorative corner light accents */}
+        {/* Decorative corner & bottom light accents */}
         <div className="absolute -top-1.5 -left-1.5 w-8 h-8 bg-sky-400/50 rounded-full blur-md pointer-events-none" />
         <div className="absolute -bottom-1.5 -right-1.5 w-8 h-8 bg-blue-500/50 rounded-full blur-md pointer-events-none" />
+        {/* Bottom edge neon light beam */}
+        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-4/5 h-3 bg-gradient-to-r from-transparent via-cyan-400 to-transparent blur-xs pointer-events-none" />
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-sky-400/40 blur-xl pointer-events-none" />
 
         {/* Canvas Display */}
         <canvas

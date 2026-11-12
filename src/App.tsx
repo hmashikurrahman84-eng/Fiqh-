@@ -278,19 +278,47 @@ export default function App() {
 
       <HelpModal isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
 
-      {/* Footer (with secret triple-click for admin) */}
-      <footer className="w-full py-4 px-4 border-t border-sky-500/20 bg-[#070D1E] text-center text-xs text-sky-300/80 flex flex-col sm:flex-row items-center justify-center gap-2 select-none">
-        <span
-          onClick={handleSecretFooterClick}
-          className="cursor-default transition-colors hover:text-white font-bold"
-          title="জামিয়া কারীমিয়া আরাবিয়া"
-        >
-          © {new Date().getFullYear()} জামিয়া কারীমিয়া আরাবিয়া
-        </span>
-        <span className="hidden sm:inline text-sky-600 font-bold">•</span>
-        <span className="font-semibold text-sky-200">ইসলামী সম্মেলন ও ফিকহি কর্মশালা</span>
-        <span className="hidden sm:inline text-sky-600 font-bold">•</span>
-        <span className="text-sky-300/70 font-medium">সকল ডিভাইসে নিরাপদ ও দ্রুত ফটোকার্ড জেনারেটর</span>
+      {/* Footer with Illuminated Lighting and Designer Credit */}
+      <footer className="w-full relative py-5 px-4 sm:px-6 border-t-2 border-sky-400 bg-gradient-to-b from-[#0c1630] to-[#070D1E] text-xs text-sky-300/90 select-none shadow-[0_-12px_35px_rgba(56,189,248,0.4)]">
+        {/* Illuminated Neon Light Strip across the top of footer */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[3px] bg-gradient-to-r from-transparent via-cyan-300 via-sky-400 to-transparent shadow-[0_0_20px_#38bdf8] pointer-events-none" />
+        {/* Ambient bottom light glow flare */}
+        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-full max-w-2xl h-16 bg-sky-400/20 blur-3xl rounded-full pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 relative z-10">
+          {/* Organization & Event text */}
+          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-center sm:text-left">
+            <span
+              onClick={handleSecretFooterClick}
+              className="cursor-default transition-colors hover:text-white font-bold text-sky-100"
+              title="জামিয়া কারীমিয়া আরাবিয়া"
+            >
+              © {new Date().getFullYear()} জামিয়া কারীমিয়া আরাবিয়া
+            </span>
+            <span className="hidden sm:inline text-sky-400 font-bold">•</span>
+            <span className="font-semibold text-sky-200">ইসলামী সম্মেলন ও ফিকহি কর্মশালা</span>
+            <span className="hidden sm:inline text-sky-400 font-bold">•</span>
+            <span className="text-sky-300/80 font-medium">সকল ডিভাইসে দ্রুত ফটোকার্ড জেনারেটর</span>
+          </div>
+
+          {/* Designer Credit with Neon Lighting Halo: Designer: H.M. Ashikur Rahman */}
+          <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-white text-slate-800 border-2 border-sky-400 ring-2 ring-sky-300/60 shadow-[0_0_25px_rgba(56,189,248,0.6)] transition-all">
+            <span className="text-xs font-bold text-slate-800 tracking-wide font-sans">
+              Designer: <span className="text-blue-900 font-extrabold">H.M. Ashikur Rahman</span>
+            </span>
+            <a
+              href="tel:01897362757"
+              className="flex items-center gap-1.5 hover:opacity-90 transition-opacity border-l border-slate-300 pl-2.5"
+              title="Design Mahal - Creative Design Studio (01897362757 • 01629947628)"
+            >
+              <img
+                src="/designer_logo_trimmed.png"
+                alt="Design Mahal - Creative Design Studio"
+                className="h-8 sm:h-8.5 w-auto object-contain"
+              />
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
